@@ -51,12 +51,11 @@ Naming
 * Name variables, methods, and classes to reveal intent.
 * Treat acronyms as words in names (`XmlHttpRequest` not `XMLHTTPRequest`),
   even if the acronym is the entire name (`class Html` not `class HTML`).
-* Name variables holding a factory with `_factory` (`user_factory`).
 * Name variables created by a factory after the factory (`user_factory`
   creates `user`).
 
-CSS
----
+CSS / LESS / SASS
+-----------------
 
 * Order properties within rule sets alphabetically.
 
@@ -79,11 +78,8 @@ CoffeeScript
 Ruby
 ----
 
-[Sample](/thoughtbot/guides/blob/master/style/samples/ruby.rb)
+[Sample](/sientia/guides/blob/master/style/samples/ruby.rb)
 
-* Avoid conditional modifiers (lines that end with conditionals).
-* Avoid ternary operators (`boolean ? true : false`). Use multi-line `if`
-  instead to emphasize code branches.
 * Prefer `detect` over `find`.
 * Prefer `inject` over `reduce`.
 * Prefer `map` over `collect`.
@@ -99,102 +95,55 @@ Ruby
 * Use `def self.method`, not `def Class.method` or `class << self`.
 * Use `def` with parentheses when there are arguments.
 * Use `each`, not `for`, for iteration.
-* Use heredocs for multi-line strings.
+* Use [heredocs](http://rubyquicktips.com/post/4438542511/heredoc-and-indent) for 
+  multi-line strings.
 
-ERb
----
-
-[Sample](/thoughtbot/guides/blob/master/style/samples/erb.rb)
-
-* When wrapping long lines, keep the method name on the same line as the ERb.
-  interpolation operator and keep each method argument on its own line.
 
 Rails
 -----
 
 * Avoid `member` and `collection` routes.
 * Avoid the `:except` option in routes.
+* Use the `:only` option to explicitly state exposed routes.
 * Don't reference a model class directly from a view.
 * Don't use protected controller methods.
-* Don't use SQL or SQL fragments (`where('inviter_id is not null')`) outside
-  of models.
-* Keep the `db/schema.rb` under version control.
-* If there are default values, set them in migrations.
 * Name initializers for their gem name.
-* Order ActiveRecord associations alphabetically by attribute name.
-* Order ActiveRecord validations alphabetically by attribute name.
+* Order Mongoid associations alphabetically by attribute name.
+* Order Mongoid validations alphabetically by attribute name.
 * Order controller contents: filters, public methods, private methods.
 * Order model contents: constants, macros, public methods, private methods.
 * Order resourceful routes alphabetically by name.
 * Put application-wide partials in the
   [`app/views/application`](http://goo.gl/5Z8Vv) directory.
 * Use `_path`, not `_url`, for named routes everywhere except mailer views.
-* Use `def self.method`, not the `scope :method` DSL.
-* Use SQL, not `ActiveRecord` models, in migrations.
 * Use the default `render 'partial'` syntax over `render partial: 'partial'`.
-* Use the `:only` option to explicitly state exposed routes.
 
 Background Jobs
 ---------------
 
-* Define a `PRIORITY` constant at the top of delayed job classes.
-* Define two public methods: `self.enqueue` and `perform`.
-* Put delayed job classes in `app/jobs`.
+* Put sidekiq classes in `app/workers`.
 
 Email
 -----
 
-* Use one `ActionMailer` for the app. Name it `Mailer`.
-* Use the user's name in the `From` header and email in the `Reply-To` when
-  [delivering email on behalf of the app's users](http://goo.gl/5w1ck).
+[tbd]
 
 Testing
 -------
 
 [Sample](/thoughtbot/guides/blob/master/style/samples/testing.rb)
 
-* Avoid `its`, `let`, `let!`, `specify`, `before`, and `subject`.
 * Avoid using instance variables in tests.
 * Don't prefix `it` block descriptions with 'should'.
 * Name outer `describe` blocks after the method under test. Use `.method`
   for class methods and `#method` for instance methods.
-* Order ActiveRecord association tests alphabetically by attribute name.
-* Order ActiveRecord validation tests alphabetically by attribute name.
-* Order `factories.rb` contents: sequences, traits, factory definitions.
+* Order Mongoid association tests alphabetically by attribute name.
+* Order Mongoid validation tests alphabetically by attribute name.
+* Order `factories.rb` contents: factory definitions, sequences, traits.
 * Order factory attributes: implicit attributes, explicit attributes,
   child factory definitions. Each section's attributes are alphabetical.
 * Order factory definitions alphabetically by factory name.
 * Prefer `eq` to `==` in RSpec.
 * Separate setup, exercise, verification, and teardown phases with newlines.
 * Use an `it` example for each execution path through the method.
-* Use one factories.rb file per project.
 * Use [stubs and spies](http://goo.gl/EciDJ) (not mocks) in isolated tests.
-
-Objective-C
------------
-
-[Sample](/thoughtbot/guides/blob/master/style/samples/ObjectiveC.m)
-
-* `#import` linked frameworks in the prefix header (`ProjectName-Prefix.pch`).
-* Keep `.xib` files grouped with their associated view class.
-* Order `#import` statements alphabetically.
-* Order `@class` directives alphabetically.
-* Order `@property` modifiers: memory management, atomicity, writability.
-* Organize classes into `models`, `views`, `controllers`, `categories`,
-  and `services` directories.
-* Prefer `@class` to `#import` when referring to external classes in a public
-  `@interface`.
-* Prefer `@property` to declaring instance variables.
-* Prefix class names with a 2-letter project acronym.
-* Prefix string constants being used as keys with 'k'.
-* Remove `#import` statements for `Foundation` and `UIKit` in new project
-  templates.
-* Separate methods by function using `#pragma mark - <Section Name>`
-* Separate sections into subsections using `#pragma mark <Subsection Name>`
-* Use `@[arrayObject]`, `@{@"key" : value}`, `@(YES or NO)`, and `@5.0`
-  literals.
-* Use `@interface ClassName ()` to declare private properties.
-* Use `lowerCamelCase` for method names.
-* Use `NSAssert` in methods that require the presence of certain arguments.
-* Write methods using the happy path. Indent the exceptional cases. Keep the
-  optimal case in the left-most column.

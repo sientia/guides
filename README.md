@@ -3,9 +3,8 @@ Guides
 
 Guides for getting things done, programming well, and programming in style.
 
-* [Protocol](/thoughtbot/guides/blob/master/protocol)
-* [Best Practices](/thoughtbot/guides/blob/master/best-practices)
-* [Style](/thoughtbot/guides/blob/master/style)
+* [Best Practices](/sientia/guides/blob/master/best-practices)
+* [Style](/sientia/guides/blob/master/style)
 
 A note on the language:
 
@@ -18,10 +17,6 @@ Credits
 -------
 
 Thank you, [contributors](/thoughtbot/guides/graphs/contributors)!
-
-![thoughtbot](http://thoughtbot.com/images/tm/logo.png)
-
-Guides is maintained by [thoughtbot, inc](http://thoughtbot.com/community).
 
 License
 -------

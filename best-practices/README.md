@@ -57,27 +57,17 @@ Bundler
   `Gemfile` declarations for gems that are safe to update often, such as pg,
   thin, and debugger.
 
-Postgres
---------
-
-* Avoid multicolumn indexes in Postgres. It [combines multiple
-  indexes](http://goo.gl/pY3Po) efficiently. Optimize later with a [compound
-  index if needed](http://www.postgresql.org/docs/9.2/static/indexes-bitmap-scans.html).
-* Consider a [partial index](http://goo.gl/YC8Jt) for queries on booleans.
-* Constrain most columns as [`NOT NULL`](http://goo.gl/0GeBr).
 
 Background Jobs
 ---------------
 
-* Store IDs, not `ActiveRecord` objects for cleaner serialization, then re-find
-  the `ActiveRecord` object in the `perform` method.
+* Store IDs, not `Mongoid` objects for cleaner serialization, then re-find
+  the `Mongoid` object in the `perform` method.
 
 Email
 -----
 
-* Use [SendGrid](http://goo.gl/Kxu9W) or [Amazon SES](http://goo.gl/A5jAA) to
-  deliver email in staging and production environments.
-* Use a tool like [mail_view](http://goo.gl/HhX8y) to look at each created or
+* Use a tool like [mailcatcher](http://mailcatcher.me) to look at each created or
   updated mailer view before merging.
 
 Testing
@@ -85,19 +75,11 @@ Testing
 
 * Disable real HTTP requests to external services with
   `WebMock.disable_net_connect!`.
-* Test background jobs with a [`Delayed::Job` matcher](http://goo.gl/bzBlN).
 * Use a [Fake](http://goo.gl/YR7Hh) to stub requests to external services.
 * Use integration tests to execute the entire app.
-* Use non-[SUT](http://goo.gl/r5Ti2) methods in expectations when possible.
 
 Browsers
 --------
 
 * Don't support clients without Javascript.
 * Don't support IE6.
-
-Objective-C
------------
-
-* Prefer categories on `Foundation` classes to helper methods.
-* Prefer string constants to literals when providing keys or key paths to methods.
