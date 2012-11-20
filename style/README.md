@@ -16,7 +16,7 @@ Git
   development machine or process.
 * Delete local and remote feature branches after merging.
 * Perform work in a feature branch.
-* Prefix feature branch names with your initials.
+* Use @username in review comments
 * Rebase frequently to incorporate upstream changes.
 * Use a [pull request](http://goo.gl/Kmdee) for code reviews.
 * Write a [good commit message](http://goo.gl/w11us).
@@ -57,7 +57,7 @@ Naming
 CSS / LESS / SASS
 -----------------
 
-* Order properties within rule sets alphabetically.
+
 
 JavaScript
 ----------
@@ -73,7 +73,7 @@ CoffeeScript
   `SCREAMING_SNAKE_CASE` for constants, `_single_leading_underscore` for
   private variables and functions.
 * Prefer `is` to `== ` or `===`
-* Prefer `or` and `and` to `||` and `&&`
+* Use `&&` and `||` for Boolean expressions.
 
 Ruby
 ----
@@ -85,7 +85,6 @@ Ruby
 * Prefer `map` over `collect`.
 * Prefer `select` over `find_all`.
 * Prefer single quotes for strings.
-* Use `_` for unused block parameters.
 * Use `%{}` for single-line strings needing interpolation and double-quotes.
 * Use `&&` and `||` for Boolean expressions.
 * Use `{...}` for single-line blocks. Use `do..end` for multi-line blocks.
@@ -117,6 +116,8 @@ Rails
   [`app/views/application`](http://goo.gl/5Z8Vv) directory.
 * Use `_path`, not `_url`, for named routes everywhere except mailer views.
 * Use the default `render 'partial'` syntax over `render partial: 'partial'`.
+* Don't use non RESTful public methods in controllers
+* Avoid => Hashes
 
 Background Jobs
 ---------------
@@ -126,13 +127,14 @@ Background Jobs
 Email
 -----
 
-[tbd]
+* always use multipart
 
 Testing
 -------
 
 [Sample](/thoughtbot/guides/blob/master/style/samples/testing.rb)
 
+* Use traits for factories, keep factories minimal.
 * Avoid using instance variables in tests.
 * Don't prefix `it` block descriptions with 'should'.
 * Name outer `describe` blocks after the method under test. Use `.method`
