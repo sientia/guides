@@ -39,8 +39,8 @@ Rails
 
 * Don't change a migration after it has been merged into master if the desired
   change can be solved with another migration.
-* Validate the associated `belongs_to` object (`user`), not the database
-  column (`user_id`).
+* Validate the associated `belongs_to` database column (`user_id`), not the object
+  (`user`).
 * Avoid exact version numbers in `Gemfile` except for non-framework gems.
 
 Bundler
@@ -73,13 +73,11 @@ Email
 Testing
 -------
 
-* Disable real HTTP requests to external services with
-  `WebMock.disable_net_connect!`.
-* Use a [Fake](http://goo.gl/YR7Hh) to stub requests to external services.
+* Disable real HTTP requests to external services.
 * Use integration tests to execute the entire app.
 
 Browsers
 --------
 
 * Don't support clients without Javascript.
-* Don't support IE6.
+* Don't support IE <= 8.
