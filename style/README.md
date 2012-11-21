@@ -118,6 +118,7 @@ Rails
 * Use the default `render 'partial'` syntax over `render partial: 'partial'`.
 * Don't use non RESTful public methods in controllers
 * Avoid => Hashes
+* Never use `url_for` helper!
 
 Background Jobs
 ---------------
