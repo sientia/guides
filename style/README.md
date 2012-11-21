@@ -134,7 +134,7 @@ Testing
 
 [Sample](/thoughtbot/guides/blob/master/style/samples/testing.rb)
 
-* Factories: avoid using a lot of :traits directly in your tests - create specific factories instead.
+* Avoid listing a lot of traits when using factories - create specific factories instead, consisting of traits.
 * Keep factories minimal.
 * Avoid using instance variables in tests.
 * Don't prefix `it` block descriptions with 'should'.
