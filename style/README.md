@@ -135,18 +135,28 @@ Testing
 
 [Sample](/thoughtbot/guides/blob/master/style/samples/testing.rb)
 
-* Avoid listing a lot of traits when using factories - create specific factories instead, consisting of traits.
-* Keep factories minimal.
-* Avoid using instance variables in tests.
-* Don't prefix `it` block descriptions with 'should'.
-* Name outer `describe` blocks after the method under test. Use `.method`
-  for class methods and `#method` for instance methods.
-* Order Mongoid association tests alphabetically by attribute name.
-* Order Mongoid validation tests alphabetically by attribute name.
-* Order `factories.rb` contents: factory definitions, sequences, traits.
-* Order factory attributes: implicit attributes, explicit attributes,
-  child factory definitions. Each section's attributes are alphabetical.
-* Order factory definitions alphabetically by factory name.
+* Factories:
+  * Avoid listing a lot of traits in tests - create specific factories instead, consisting of traits.
+  * Keep factories minimal.
+  * Order contents:
+    * definitions
+    * sequences
+    * traits.
+  * Order attributes:
+    * implicit attributes
+    * explicit attributes
+    * child factory definitions
+    * --> each section's attributes are alphabetical!
+  * Order factory definitions alphabetically by factory name.
+  * Have an individual `<model_name_plural>.rb` file per model.
+* Describing specs:
+  * Don't prefix `it` block descriptions with 'should' (not `it "should do something"` but `it "does something"`).
+  * Name outer `describe` blocks after the method under test. Use `describe ".method"` for class methods and `describe "#method"` for instance methods.
+  * Use "double quoted strings" for descriptions (`it "checks object's state"` is easier to read than `it 'checks object\'s state'`).
+* Model specs:
+  * Order Mongoid association tests alphabetically by attribute name.
+  * Order Mongoid validation tests alphabetically by attribute name.
+
 * Prefer `eq` to `==` in RSpec.
 * Separate setup, exercise, verification, and teardown phases with newlines.
 * Use an `it` example for each execution path through the method.
