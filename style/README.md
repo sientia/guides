@@ -132,12 +132,16 @@ Email
 
 Testing
 -------
-
 [Sample](/thoughtbot/guides/blob/master/style/samples/testing.rb)
+
+* Spec Tests are our documentation of the application.
+* Write descriptive and readable specs.
+* Spec the behaviour, not the implementation.
 
 * Factories:
   * Avoid listing a lot of traits in tests - create specific factories instead, consisting of traits.
   * Keep factories minimal.
+  * Double-check for existing factories matching your needs.
   * Order contents: definitions, sequences, traits.
   * Order attributes: implicit attributes, explicit attributes, child factory definitions --> each section's attributes are alphabetical!
   * Order factory definitions alphabetically by factory name.
@@ -148,16 +152,19 @@ Testing
   * Use `"double quoted strings"` for descriptions (`it "checks object's state"` is easier to read than `it 'checks object\'s state'`).
   * Don't overencapsulate descriptions: the `it` description should make sense on its own.
 * Setting up test data:
-  * Use `before` blocks to sets up test objects and assign them to `@instance_variables`.
-  * Use meaningful names for test objects, e.g. `@contact_with_email` or `@too_big_file`.
-  * Set every attribute you are going to use specifically (don't rely on factories' defaults).
+  * Keep test data small.
+  * Define test data close to the test using it.
+  * Use meaningful names for test objects, e.g. `@contact_with_email` or `@big_file`, `@small_file`, `@attachment`.
   * Sharing test data between tests is okay, but don't overdo it (redundancy is ok, readibility the highest goal).
-  * Use `let` and `let` when setting up complex test objects; assign them to `@instance_variables` in the `before` block.
+  * Use `before` blocks to sets up test objects and assign them to `@instance_variables`.
+  * Set every attribute you are going to use specifically (don't rely on factories' defaults).
+  * Use `let` when setting up complex test objects; assign them to `@instance_variables` in the `before` block.
 * Model specs:
   * Order Mongoid association tests alphabetically by attribute name.
   * Order Mongoid validation tests alphabetically by attribute name.
 * Request specs:
   * Use acceptance criteria as scaffold
+  * Write small tests.
 * General:
   * Prefer `eq` to `==` in RSpec.
   * Use an `it` example for each execution path through the method (every example should have one assertion).
