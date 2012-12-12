@@ -138,26 +138,29 @@ Testing
 * Factories:
   * Avoid listing a lot of traits in tests - create specific factories instead, consisting of traits.
   * Keep factories minimal.
-  * Order contents:
-    * definitions
-    * sequences
-    * traits.
-  * Order attributes:
-    * implicit attributes
-    * explicit attributes
-    * child factory definitions
-    * --> each section's attributes are alphabetical!
+  * Order contents: definitions, sequences, traits.
+  * Order attributes: implicit attributes, explicit attributes, child factory definitions --> each section's attributes are alphabetical!
   * Order factory definitions alphabetically by factory name.
   * Have an individual `<model_name_plural>.rb` file per model.
 * Describing specs:
   * Don't prefix `it` block descriptions with 'should' (not `it "should do something"` but `it "does something"`).
   * Name outer `describe` blocks after the method under test. Use `describe ".method"` for class methods and `describe "#method"` for instance methods.
-  * Use "double quoted strings" for descriptions (`it "checks object's state"` is easier to read than `it 'checks object\'s state'`).
+  * Use `"double quoted strings"` for descriptions (`it "checks object's state"` is easier to read than `it 'checks object\'s state'`).
+  * Don't overencapsulate descriptions: the `it` description should make sense on its own.
+* Setting up test data:
+  * Use `before` blocks to sets up test objects and assign them to `@instance_variables`.
+  * Use meaningful names for test objects, e.g. `@contact_with_email` or `@too_big_file`.
+  * Set every attribute you are going to use specifically (don't rely on factories' defaults).
+  * Sharing test data between tests is okay, but don't overdo it (redundancy is ok, readibility the highest goal).
+  * Use `let` and `let` when setting up complex test objects; assign them to `@instance_variables` in the `before` block.
 * Model specs:
   * Order Mongoid association tests alphabetically by attribute name.
   * Order Mongoid validation tests alphabetically by attribute name.
-
-* Prefer `eq` to `==` in RSpec.
-* Separate setup, exercise, verification, and teardown phases with newlines.
-* Use an `it` example for each execution path through the method.
-* Use [stubs and spies](http://goo.gl/EciDJ) (not mocks) in isolated tests.
+* Request specs:
+  * Use acceptance criteria as scaffold
+* General:
+  * Prefer `eq` to `==` in RSpec.
+  * Use an `it` example for each execution path through the method (every example should have one assertion).
+  * Use [stubs and spies](http://goo.gl/EciDJ) (not mocks) in isolated tests.
+  * Don't use I18n.
+  * Define [custom matchers](http://solnic.eu/2011/01/14/custom-rspec-2-matchers.html) when checking for the same condition over and over again.
