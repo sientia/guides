@@ -3,8 +3,8 @@ Guides
 
 Guides for getting things done, programming well, and programming in style.
 
-* [Best Practices](/sientia/guides/blob/master/best-practices)
-* [Style](/sientia/guides/blob/master/style)
+* [Best Practices](/sientia/guides/tree/master/best-practices)
+* [Style](/sientia/guides/tree/master/style)
 
 A note on the language:
 
