@@ -88,7 +88,7 @@ Ruby
 * Use `%{}` for single-line strings needing interpolation and double-quotes.
 * Use `&&` and `||` for Boolean expressions.
 * Use `{ ... }` for single-line blocks. Use `do..end` for multi-line blocks.
-* Use `{...} for Hashes, and { ... } (with spaces) for blocks => Exception: in HAML files you can do whatever you is more readable (e.g. `%td{ colspan: 2 }`)
+* Use `{...}` for Hashes, and `{ ... }` (with spaces) for blocks => Exception: in HAML files you can do whatever you is more readable (e.g. `%td{ colspan: 2 }`)
 * Use `?` suffix for predicate methods.
 * Use `CamelCase` for classes and modules, `snake_case` for variables and
   methods, `SCREAMING_SNAKE_CASE` for constants.
