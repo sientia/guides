@@ -121,6 +121,13 @@ Rails
 * Don't use non RESTful public methods in controllers
 * Avoid => Hashes
 
+HAML
+--------
+* Break ruby code of element has a class i.e 
+```haml
+%p.fancy
+     = content
+```
 Background Jobs
 ---------------
 
