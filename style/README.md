@@ -124,6 +124,7 @@ Rails
 Haml
 --------
 * Break ruby code of element has a class i.e 
+
 ```haml
 %p.fancy
      = content
