@@ -127,7 +127,7 @@ Haml
 
 ```haml
 %p.fancy
-     = content
+  = content
 ```
 
 Background Jobs
