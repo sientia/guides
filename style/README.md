@@ -74,6 +74,7 @@ CoffeeScript
   private variables and functions.
 * Prefer `is` to `== ` or `===`
 * Use `&&` and `||` for Boolean expressions.
+* use `@el = $(el)` for elmements passed via constructor
 
 Ruby
 ----
