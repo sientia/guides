@@ -122,6 +122,39 @@ Rails
 * Don't use non RESTful public methods in controllers
 * Avoid => Hashes
 
+Rails Models
+-----------------
+
+Folgende Reihenfolge soll nach Möglichkeit innerhalb der Models eingehalten werden.
+
+* extend, include
+* constants
+* attr_accessible/protected (Security relevante Geschichten, <4.0)
+* accepts_nested_attributes_for (keine Blöcke mehr! reject_if: :method_name)
+* macros
+    * tenant
+    * paginates_per
+    * mount_uploader
+    * orderable
+    * devise
+* virtuelle Attribute (Accessors)
+* attribute (fields)
+* delegations / aliases
+* indizes
+* associations
+* validations
+* callbacks (hooks)
+* scopes
+* configurations
+    * state_machine
+    * mapping_without_super
+    * tire.mapping
+    * track_history
+* initialize()
+* public class methods (self.xxx)
+* public instance methods
+* private instance methods
+
 Haml
 --------
 * Break ruby code of element has a class i.e 
